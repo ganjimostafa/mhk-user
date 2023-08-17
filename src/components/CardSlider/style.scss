@@ -1,0 +1,13 @@
+@import "../../scss/color";
+@import "../../scss/config";
+.mySwiper {
+    width: 240px;
+    height: 320px;
+    margin: 0;
+  }
+  
+  .swiper-slide {
+    @include Flex-Box(row, center, center);
+    border-radius: 18px;
+    color: #fff;
+  }

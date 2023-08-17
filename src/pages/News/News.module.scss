@@ -1,0 +1,35 @@
+@import "../../scss/color";
+@import "../../scss/config";
+
+.news_header {
+  direction: rtl;
+  padding: 125px 5% 30px 0;
+  margin: 0;
+  font-family: "vazir-regular";
+  font-size: 25px;
+  background-color: $milky_15;
+}
+
+.root {
+  width: 100%;
+  @include Flex-Box(column, space-around, center);
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 10% 0 10%;
+  font-family: "vazir-regular";
+  direction: rtl;
+}
+
+.news__item {
+  @include Flex-Box(column, space-around, center);
+
+  &--title {
+    width: 100%;
+    @include Flex-Box(row, space-between, center);
+    flex-wrap: wrap;
+  }
+  & img {
+    width: 30vh;
+    align-self: flex-end;
+  }
+}

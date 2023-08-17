@@ -1,0 +1,84 @@
+@import "../../scss/color";
+@import "../../scss/config";
+
+.root {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  @include Flex-Box(column, flex-start, center);
+  text-align: right;
+  font-family: "vazir-regular";
+}
+
+.pageTitle {
+  background-color: $milky_15;
+  width: 100%;
+  margin: 0;
+  padding: 130px 5% 30px 0;
+  font-size: 25px;
+}
+.title {
+  margin: 0;
+  font-size: 20px;
+  width: 84%;
+  color: $blue_15;
+  margin: 48px 0 12px 0;
+}
+.description {
+  width: 84%;
+  text-align: justify;
+  direction: rtl;
+  margin: 0;
+}
+.options {
+  @include Flex-Box(row-reverse, space-around, center);
+  width: 84%;
+  flex-wrap: wrap;
+
+  &__item {
+    @include Flex-Box(row-reverse, space-between, flex-start);
+    width: 300px;
+    height: 200px;
+    margin: 30px;
+    & img {
+      margin-left: 10px;
+    }
+    & div {
+      @include Flex-Box(column, flex-start, flex-end);
+      & h4 {
+        margin: 10px 0 0 0;
+      }
+      & p {
+        text-align: justify;
+        direction: rtl;
+      }
+    }
+  }
+}
+.branch {
+  width: 84%;
+  margin: 0;
+  margin-bottom: 20px;
+  @include Flex-Box(column, center, stretch);
+
+  & h4 {
+    background-color: $blue_20;
+    padding: 10px 20px 10px 10px;
+    color: $white;
+    border-radius: 10px;
+  }
+  &__card {
+    @include Flex-Box(row-reverse, space-between, center);
+    flex-wrap: wrap;
+
+    iframe {
+      border: none;
+      border-radius: 20px;
+      width: 300px;
+      height: 250px;
+    }
+    &--description {
+      padding-right: 30px;
+    }
+  }
+}

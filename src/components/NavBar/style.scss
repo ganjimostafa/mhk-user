@@ -1,0 +1,229 @@
+@import "../../scss/color";
+@import "../../scss/config";
+
+.navbar {
+  position: fixed;
+  z-index: 100;
+  box-sizing: border-box;
+  background-color: $black;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -200%);
+  transition: all 300ms ease;
+  margin-top: 0;
+
+  &__show {
+    transform: translate(-50%, 0);
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.56);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.5px);
+    -webkit-backdrop-filter: blur(4.5px);
+  }
+  img {
+    position: absolute;
+    width: 70px;
+    top: 0;
+    right: 5%;
+    // transform: translate(-50%, 0);
+  }
+  &__menu--toggler {
+    display: none !important;
+    svg {
+      padding-top: 17px;
+      font-size: 2rem;
+      color: $white;
+    }
+  }
+  &__sidebar {
+    display: inline-block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    z-index: 10;
+  }
+  &__sidebar--left {
+    display: inline-block;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    width: calc(100% - 200px);
+    height: 100%;
+    opacity: 0.8;
+    transition: all 300ms ease;
+    // -webkit-backdrop-filter: blur(100px);
+    // backdrop-filter: blur(100px);
+    background-color: $blue-50;
+  }
+  &__sidebar--right {
+    display: inline-block;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: $black;
+  }
+  &__menu {
+    margin-top: 0rem;
+    list-style: none;
+    direction: rtl;
+    padding: 4rem 1rem 0 0;
+    width: 100%;
+    max-width: 250px;
+    float: right;
+    // background-color: #fff;
+  }
+  &__menu--link {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    color: $gray-100;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+  }
+  &__container {
+    position: relative;
+    @include Flex-Box(row, space-between, center);
+    ul {
+      padding: 0;
+      list-style: none;
+      width: 60%;
+      height: 60px;
+      @include Flex-Box(row-reverse, space-evenly, center);
+      li {
+        position: relative;
+        &.active::after {
+          content: "";
+          position: absolute;
+          width: 8px;
+          height: 8px;
+          background-color: $gray-100;
+          border-radius: 50%;
+          bottom: 0;
+          left: 50%;
+          transform: translate(-50%, 50%);
+        }
+        a {
+          text-decoration: none;
+          color: $white;
+          font-family: "vazir-regular";
+          font-size: 1.3rem;
+        }
+        button {
+          background-color: transparent;
+          border: none;
+          text-decoration: none;
+          color: $white;
+          font-family: "vazir-regular";
+          font-size: 1.3rem;
+          cursor: pointer;
+        }
+      }
+    }
+    &--contact {
+      background-color: #607eaa;
+      text-decoration: none;
+      color: $white;
+      font-family: "vazir-regular";
+      font-size: 1.2rem;
+      padding: 7px 20px 7px 20px;
+      border-radius: 30px;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    & {
+      width: 100%;
+      top: 0;
+      border-radius: 0;
+      direction: rtl;
+      box-sizing: border-box;
+      padding-right: 1rem;
+      height: 65px;
+      transform: translate(-50%, 0);
+      opacity: 1;
+    }
+    img {
+      width: 40px;
+      z-index: 15;
+    }
+    &__container {
+      display: none;
+      & img{
+        display: none !important;
+      }
+    }
+    &__sidebar {
+      direction: ltr;
+    }
+    &__menu--toggler {
+      display: flex !important;
+      z-index: 15;
+    }
+  }
+}
+
+.mega__menu {
+  & ul {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.mega__first {
+  box-sizing: border-box;
+  margin: 0;
+  list-style-type: none;
+  font-family: "vazir-regular";
+  font-size: 1.2rem;
+  width: 13% !important;
+  text-decoration: none;
+  padding: 20px;
+  @include Flex-Box(row, flex-start, center);
+  border-left: solid 3px $gray-400;
+  cursor: pointer;
+  &--selected {
+    width: 13%;
+    list-style-type: none;
+    background-color: $milky_15;
+    padding: 20px;
+    border-left: solid 3px $gray-400;
+    cursor: pointer;
+  }
+  &--button {
+    @include Flex-Box(row, flex-start, center);
+    font-size: 1.2rem;
+    font-family: "vazir-regular";
+    background-color: transparent;
+    border: none;
+    border-right: 4px solid $gray-400;
+    padding-right: 5px;
+    cursor: pointer;
+
+    &__selected {
+      @include Flex-Box(row, center, center);
+      font-size: 1.2rem;
+      border: none;
+      border-right: 4px solid $blue_15;
+      font-family: "vazir-regular";
+      background-color: transparent;
+      padding-right: 5px;
+      cursor: pointer;
+    }
+  }
+}
+
+.mega__second {
+  // @include Flex-Box(row, flex-start, stretch);
+  box-sizing: border-box;
+  font-family: "vazir-regular";
+  font-size: 1.1rem;
+
+  text-decoration: none;
+  color: $black;
+  padding: 0;
+  margin: 0;
+  padding: 5px;
+}

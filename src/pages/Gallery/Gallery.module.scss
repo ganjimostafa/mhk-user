@@ -1,0 +1,32 @@
+@import "../../scss/color";
+@import "../../scss/config";
+
+.gallery_header{
+ 
+  direction: rtl;
+  padding: 125px 5% 30px 0;
+  margin: 0;
+  font-family: "vazir-regular";
+  font-size: 25px;
+  
+}
+.line{
+  display: inline;
+  width: 200px;
+  background-color: $blue_15;
+  height: 100px;
+}
+
+.root{
+  width: 100%;
+  @include Flex-Box(row-reverse, space-around, center);
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 10% 0 10%;
+  img{
+    width: 40vh;
+    margin: 10px;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+}

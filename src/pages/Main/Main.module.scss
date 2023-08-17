@@ -1,0 +1,204 @@
+@import "../../scss/color";
+@import "../../scss/config";
+
+.root {
+  @include Flex-Box(column, center, center);
+}
+
+.landing {
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  text-align: rtl;
+  & img {
+    width: 100%;
+  }
+  &__description {
+    box-sizing: border-box;
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    @include Flex-Box(column, flex-start, flex-end);
+    width: 50%;
+    & h3 {
+      font-size: 70px;
+      color: $white;
+      font-family: "Vazir-Regular";
+      direction: rtl;
+      margin-bottom: 20px;
+    }
+    & p {
+      color: $white;
+      font-family: "Vazir-Regular";
+      direction: rtl;
+    }
+    &--search {
+      @include Flex-Box(row, center, center);
+      box-sizing: border-box;
+      width: 330px;
+      height: 45px;
+      border: solid $white 2px;
+      border-radius: 40px;
+      margin-top: 5%;
+      & input {
+        box-sizing: border-box;
+        color: $white;
+        width: 85%;
+        background-color: transparent;
+        border: none;
+        direction: rtl;
+        font-family: "Vazir-Regular";
+        &::placeholder {
+          color: $white;
+          opacity: 1;
+        }
+      }
+      & button {
+        box-sizing: border-box;
+        padding-top: 3px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+      }
+    }
+    @media screen and (max-width: 1320px) {
+      & {
+        & h3 {
+          font-size: 40px;
+        }
+        & p {
+          font-size: 11px;
+        }
+      }
+    }
+    @media screen and (max-width: 760px) {
+      & {
+        top: 20%;
+        width: 80%;
+
+        & h3 {
+          font-size: 15px;
+        }
+        & p {
+          margin-top: -10px;
+          font-size: 10px;
+        }
+        &--search {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
+.gallery {
+  @include Flex-Box(column, center, flex-end);
+  position: relative;
+  margin-top: -5%;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 80%;
+  background-color: $white;
+  border-radius: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  & h4 {
+    font-family: "Vazir-Regular";
+    background-color: $milky_15;
+    margin: 0;
+    border-radius: 0 20px 0 20px;
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  & a {
+    @include Flex-Box(row, space-between, space-between);
+    align-self: start;
+    font-family: "Vazir-Regular";
+    width: 120px;
+    text-decoration: none;
+    margin: 30px 30px 30px 70px;
+    border: solid 2px $blue_15;
+    border-radius: 10px;
+    padding: 10px;
+    color: $blue_15;
+  }
+}
+
+.options {
+  @include Flex-Box(row-reverse, space-between, center);
+  flex-wrap: wrap;
+  width: 80%;
+  margin-top: 70px;
+
+  &__description {
+    @include Flex-Box(column, space-around, flex-end);
+    &--item {
+      @include Flex-Box(row, space-between, center);
+      margin-top: 20px;
+      & span {
+        font-family: "vazir-regular";
+        direction: rtl;
+      }
+      & img {
+        background-color: $milky_15;
+        padding: 10px;
+        border-radius: 8px;
+        margin-left: 20px;
+      }
+    }
+    & h3 {
+      font-family: "vazir-regular";
+      font-size: 40px;
+      margin: 0;
+      direction: rtl;
+    }
+
+    & a {
+      @include Flex-Box(row, space-between, center);
+      width: 320px;
+      text-decoration: none;
+      color: $white;
+      background-color: $blue_20;
+      padding: 10px 20px 10px 20px;
+      border-radius: 30px;
+      margin: 20px 0 20px 0;
+      cursor: pointer;
+      & span {
+        font-family: "vazir-regular";
+      }
+    }
+  }
+}
+.news {
+  width: 80%;
+  & h4 {
+    direction: rtl;
+    font-family: "vazir-regular";
+    font-size: 30px;
+  }
+}
+.news__slider {
+  width: 100% !important;
+  padding: 50px !important;
+  font-size: 30px !important;
+  overflow: hidden !important;
+  
+
+  &--slide {
+    a {
+      text-decoration: none !important;
+      color: $black;
+    }
+    text-align: justify!important;
+    direction: rtl;
+    width: 320px !important;
+    height: 300px !important;
+    color: $black !important;
+    font-size: 15px !important;
+    &:hover {
+      scale: 1.08;
+      transition: 0.5s;
+    }
+  }
+}

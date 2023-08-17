@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "Vazir-Regular";
+  src: url(../assets/fonts/Vazir-Regular-FD.eot), url(../assets/fonts/Vazir-Regular-FD.ttf),
+    url(../assets/fonts/Vazir-Regular-FD.woff), url(../assets/fonts/Vazir-Regular-FD.woff2);
+}
+
+@keyframes Rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes Fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@mixin Flex-Box($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}

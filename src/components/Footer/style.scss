@@ -1,0 +1,50 @@
+@import "../../scss/color";
+@import "../../scss/config";
+
+.root {
+  box-sizing: border-box;
+  margin: 0 !important;
+  background-color: $black_10;
+  @include Flex-Box(column, flex-end, flex-start);
+  direction: rtl;
+  font-family: "vazir-regular";
+  color: $white;
+  padding: 30px;
+}
+.description {
+  width: 50%;
+}
+@media screen and (max-width: 900px) {
+  .description {
+    width: 100%;
+  }
+}
+
+.links {
+  @include Flex-Box(row, space-between, center);
+  width: 100%;
+  flex-wrap: wrap;
+  &__social {
+    @include Flex-Box(row, space-around, center);
+    flex-wrap: wrap;
+
+    width: 550px;
+    & a {
+      @include Flex-Box(row, space-between, center);
+      width: 120px;
+      text-decoration: none;
+      color: $white;
+      cursor: pointer;
+    }
+    &--trust {
+      @include Flex-Box(row, center, center);
+      & span {
+        width: 60px;
+        height: 70px;
+        border-radius: 10px;
+        background-color: $white;
+        margin: 5px;
+      }
+    }
+  }
+}
